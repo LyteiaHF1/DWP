@@ -3,17 +3,23 @@ DWP Deployment Plan
 ##Lyte
 ####Spin Up Server
 1.Create new droplet on Digital Ocean
+
 2.SSH into server
   * ssh root@[IPaddress]
+
 3.Change Password and create your admin user in the sudo group
   * sudo adduser [username]
   * sudo adduser [username] sudo
+
 4.Logout as root and login as new sudo user
+
 5.Run commands to update your server
   * sudo apt-get update
   * sudo apt-get upgrade
   * sudo apt-get update
-  ####Apache Install and Config 
+
+  ####Apache Install and Config
+ 
 1.Install Apache 2
   * sudo apt-get install apache2    
 2.Configure ServerName
@@ -31,7 +37,9 @@ DWP Deployment Plan
 3.Setup Apache for Handling Multiple Sites
  * sudo pico /etc/apache2/sites-available/default
  (Change both occurrences of /var/www to /var/www/YourSite.com)
+
 ####Setup Github
+
 1. Install git core
   * sudo apt-get install git-core
 2.Github congif
@@ -44,7 +52,9 @@ DWP Deployment Plan
 6. SSH into github to check it works. It will then kick you out.
   * ssh git@github.com
   * Hi [username] You've successfully authenticated, but GitHub does not provide shell access. Connection to github.com closed.
+
 ####Push github repo up to the live site
+
 1.Change ownership of 'www' directory and put git repo inside it.
   * sudo chown [username] -R var/www/
 2. Delete index.html file
